@@ -3,7 +3,7 @@ import {API_URL, API_KEY, IMAGE_URL} from '../../Config'
 import MainImage from '../LandingPage/Sections/MainImage'
 import { Descriptions, Button, Row } from 'antd'
 import GridCard from '../LandingPage/Sections/GridCard'
-
+// movie page detail
 function MovieDetailPage(props) {
 
     const [Movie, setMovie] = useState([])
@@ -21,6 +21,7 @@ function MovieDetailPage(props) {
             fetch(`${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`)
             .then(response => response.json())
             .then(response => {
+            
                 setCrews(response.cast)
 
             })

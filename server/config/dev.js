@@ -1,3 +1,3 @@
 module.exports = {
-    mongoURI:'mongodb+srv://angela-admin:Pizza2020!@cluster0.4snae.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+    mongoURI: 'mongodb+srv://<VSLG2021b>:<KrYkQTjWe57omYoh>@cluster0.85jyo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 }

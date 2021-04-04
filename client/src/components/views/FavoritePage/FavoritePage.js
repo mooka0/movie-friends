@@ -12,6 +12,11 @@ function FavoritePage() {
     const [FavoritedMovies, setFavoritedMovies] = useState([])
 
     useEffect(() => {
+        fetchFavoritedMovies();
+       
+    }, [])
+
+    const fetchFavoritedMovies = () => {
         Axios.post('/api/favorite/getFavoritedMovie', variables)
         .then(response=> {
             if(response.data.success) {
@@ -20,18 +25,20 @@ function FavoritePage() {
                 alert('Failed to get favorited videos')
             }
         })
-    }, [])
+    }
 
-    const onClickRemove = () => {
+
+    const onClickRemove = (movieId) => {
 
         const variable = {
-            movieId: 
+            movieId: movieId,
             userFrom: localStorage.getItem('userId')
         }
 
-        axios.post('/api/favorite/removeFromFavorite', variable)
+        Axios.post('/api/favorite/removeFromFavorite', variable)
             .then(response => {
                 if(response.data.success) {
+                    fetchFavoritedMovies();
              
                 } else {
                     alert('Failed to remove from Favorites')
@@ -47,7 +54,7 @@ function FavoritePage() {
 
         const content = (
             <div>
-                {movie.movie ? 
+                {movie.moviePost ? 
                 <img src={`${IMAGE_URL}w500${movie.moviePost}`} alt="moviePost" />
                 :
                 "No Image"
@@ -59,9 +66,8 @@ function FavoritePage() {
             <Popover content={content} title={`${movie.movieTitle}`}>
             <td>{movie.movieTitle}</td>
             </Popover>
-      
-        <td>{movie.movieRunTime} Mins</td>
-        <td><button onClick={() => onClickRemove(movie.movieId)}> Remove from the Favorites</button></td>
+            <td>{movie.movieRunTime} Mins</td>
+            <td><button onClick={() => onClickRemove(movie.movieId)}> Remove from the Favorites</button></td>
 
         </tr>
     })

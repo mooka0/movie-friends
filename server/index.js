@@ -7,18 +7,18 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
 const config = require("./config/key");
-
-// const mongoose = require("mongoose");
-// mongoose
-//   .connect(config.mongoURI, { useNewUrlParser: true })
-//   .then(() => console.log("DB connected"))
-//   .catch(err => console.error(err));
-
 const mongoose = require("mongoose");
-const connect = mongoose.connect(config.mongoURI,
+
+//schema route pull
+require('/models/User')
+app.use(express.json())
+app.use(require('./routes/auth'))
+
+
+mongoose.connect(config.mongoURI,
   {
     useNewUrlParser: true, useUnifiedTopology: true,
-    useCreateIndex: true, useFindAndModify: false
+    // useCreateIndex: true, useFindAndModify: false
   })
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));

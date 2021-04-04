@@ -4,10 +4,10 @@ const saltRounds = 10;
 const jwt = require('jsonwebtoken');
 const moment = require("moment");
 
-const userSchema = mongoose.Schema({
+const userSchema = new.mongoose.Schema({
     name: {
         type:String,
-        maxlength:50
+        maxlength:10
     },
     email: {
         type:String,
@@ -16,7 +16,7 @@ const userSchema = mongoose.Schema({
     },
     password: {
         type: String,
-        minglength: 5
+        minglength: 10
     },
     lastname: {
         type:String,
@@ -88,6 +88,6 @@ userSchema.statics.findByToken = function (token, cb) {
     })
 }
 
-const User = mongoose.model('User', userSchema);
+//
 
-module.exports = { User }
+mongoose.model('User', userSchema)

@@ -16,7 +16,7 @@ const userSchema = new.mongoose.Schema({
     },
     password: {
         type: String,
-        minglength: 10
+        minlength: 5
     },
     lastname: {
         type:String,

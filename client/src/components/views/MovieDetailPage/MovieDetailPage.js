@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import {API_URL, API_KEY, IMAGE_URL} from '../../Config'
 import MainImage from '../LandingPage/Sections/MainImage'
-import { Descriptions, Button, Row } from 'antd'
+import { Descriptions, Button, Row, List } from 'antd'
 import GridCard from '../LandingPage/Sections/GridCard'
 import Favorite from '../MovieDetailPage/Sections/Favorite'
+import LikeDislikes from './Sections/LikeDislikes'
 // movie page detail
 function MovieDetailPage(props) {
+
     const movieId = props.match.params.movieId
 
     const [Movie, setMovie] = useState([])
@@ -51,6 +53,7 @@ function MovieDetailPage(props) {
             </div>
 
         {/* Movie Info Table*/}
+      
         <Descriptions title="Movie Info" bordered>
             <Descriptions.Item label="Title">{Movie.original_title}</Descriptions.Item>
             <Descriptions.Item label="release_date">{Movie.release_date}</Descriptions.Item>
@@ -62,6 +65,7 @@ function MovieDetailPage(props) {
             <Descriptions.Item label="status">{Movie.status}</Descriptions.Item>
             <Descriptions.Item label="popularity">{Movie.popularity}</Descriptions.Item>
         </Descriptions>
+        <List.Item actions={[<LikeDislikes movie movieId={movieId} userId={localStorage.getItem('userId')} />]} />
 
     
             <div style={{ display: 'flex', justifyContent: 'center'}}>

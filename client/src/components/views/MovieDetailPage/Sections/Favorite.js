@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import './favorite.css';
+import '../../FavoritePage/favorite.css';
 import Axios from 'axios';
 // import { response } from 'express';
 import { Popover } from 'antd'
-import { IMAGE_URL } from '../../Config';
+import { IMAGE_URL } from '../../../Config';
 
 function FavoritePage() {
 

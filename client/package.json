@@ -1,48 +1,47 @@
 {
-  "name": "@ant-design/colors",
-  "version": "3.2.2",
-  "description": "Color palettes calculator of Ant Design",
-  "main": "lib/index.js",
-  "module": "lib/index.js",
-  "files": [
-    "lib"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ant-design/ant-design-colors.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ant-design/ant-design-colors/issues"
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.24.1",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.4",
+    "formik": "^1.5.8",
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-app-polyfill": "^1.0.6",
+    "react-dom": "^16.8.6",
+    "react-icons": "^3.7.0",
+    "react-redux": "^7.1.0-rc.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.0",
+    "redux-promise": "^0.6.0",
+    "redux-thunk": "^2.3.0",
+    "yup": "^0.27.0"
   },
   "scripts": {
-    "tsc": "tsc",
-    "compile": "gulp",
-    "prepublishOnly": "npm run compile",
-    "lint": "eslint src --ext .ts",
-    "lint:fix": "prettier --write '{src,tests}/**/*.ts'",
-    "jest": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "test": "npm run tsc && npm run lint && npm run jest"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "author": "afc163 <afc163@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "tinycolor2": "^1.4.1"
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "@types/jest": "^24.0.11",
-    "@types/tinycolor2": "^1.4.1",
-    "@typescript-eslint/eslint-plugin": "^2.0.0",
-    "@typescript-eslint/parser": "^2.0.0",
-    "coveralls": "^3.0.3",
-    "eslint": "^6.0.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-prettier": "^3.0.1",
-    "gulp": "^4.0.2",
-    "gulp-typescript": "^5.0.1",
-    "jest": "^24.7.1",
-    "prettier": "^1.16.4",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.4.2"
-  },
-  "homepage": "https://github.com/ant-design/ant-design-colors#readme"
+    "http-proxy-middleware": "^1.0.3"
+  }
 }

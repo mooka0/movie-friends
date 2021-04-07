@@ -12,7 +12,8 @@
     "backend": "nodemon server/index.js",
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build", 
+    "install": "cd client && npm install && cd ../server && npm install"
   },
   "license": "ISC",
   "dependencies": {

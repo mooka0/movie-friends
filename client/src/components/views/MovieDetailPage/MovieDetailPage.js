@@ -59,11 +59,11 @@ function MovieDetailPage(props) {
             <Descriptions.Item label="Release Date">{Movie.release_date}</Descriptions.Item>
             {/* <Descriptions.Item label="revenue">{Movie.revenue}e</Descriptions.Item> */}
             <Descriptions.Item label="Runtime">{Movie.runtime} minutes</Descriptions.Item>
-            {/* <Descriptions.Item label="vote_average" span={2}>
+            {/* <Descriptions.Item label="Vote" span={2}>
                 {Movie.vote_average}</Descriptions.Item> */}
-            {/* <Descriptions.Item label="vote_count">{Movie.vote_count}</Descriptions.Item> */}
-            {/* <Descriptions.Item label="Status">{Movie.status}</Descriptions.Item> */}
-            {/* <Descriptions.Item label="popularity">{Movie.popularity}</Descriptions.Item> */}
+            {/* <Descriptions.Item label="Votes">{Movie.vote_count}</Descriptions.Item>
+            <Descriptions.Item label="Status">{Movie.status}</Descriptions.Item>
+            <Descriptions.Item label="Popularity">{Movie.popularity}</Descriptions.Item> */}
         </Descriptions>
 
     

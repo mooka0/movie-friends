@@ -11,8 +11,6 @@ import '../MovieDetailPage/MovieDetailPage.css'
 function MovieDetailPage(props) {
     const movieId = props.match.params.movieId
 
-    const movieId = props.match.params.movieId
-
     const [Movie, setMovie] = useState([])
     const [Crews, setCrews] = useState([])
     const [ActorToggle, setActorToggle ] = useState(false)

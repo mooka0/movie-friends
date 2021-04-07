@@ -8,7 +8,6 @@ const { auth } = require("../middleware/auth");
 //             Favorite
 //=================================
 
-
 router.post("/favoriteNumber", auth, (req, res) => {
     //Find Favorite Information inside Favorite Collection by Movie ID
 

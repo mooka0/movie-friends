@@ -19,7 +19,7 @@ const stripeBtn = () => {
     })
     .catch(error => {
       console.log("Payment Error: ", error);
-      alert("Payment Error");
+    //   alert("Payment Error");
     });
 };
 

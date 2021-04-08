@@ -10,6 +10,9 @@ import Footer from "./views/Footer/Footer"
 import FavoritePage from "./views/FavoritePage/FavoritePage"
 import MovieDetailPage from './views/MovieDetailPage/MovieDetailPage'
 
+import logo from "./views/StripeBtn/logo.png"
+import StripeBtn from "./views/StripeBtn/StripeBtn";
+
 //null   Anyone Can go inside
 //true   only logged in user can go inside
 //false  logged in user can't go inside
@@ -25,6 +28,12 @@ function App() {
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/movie/:movieId" component={Auth(MovieDetailPage, null)} />
           <Route exact path="/favorite" component={Auth(FavoritePage, null)} />
+          <Route exact path="/stripebtn" component={Auth(StripeBtn), false} />
+          {/* <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>Stripe Checkout - ReactJS</p>
+          <StripeBtn />
+        </header> */}
         </Switch>
       </div>
       <Footer />

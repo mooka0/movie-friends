@@ -7,6 +7,12 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
 const config = require("./config/key");
+const configureRoutes = require("./routes")
+const stripe = require('stripe')('sk_test_51Idm5GFYHKs1KtshFqdmgmrnml45E7LbUugqXReu4jGpi61GkPnOMSGbwor9A5JeLgiO07gsaAr0XtXYvn80Pusn00NaxiY8M8');
+
+const dotenv = require("dotenv");
+configureRoutes(app);
+dotenv.config()
 
 // const mongoose = require("mongoose");
 // mongoose
@@ -23,7 +29,7 @@ const connect = mongoose.connect(process.env.MONGODB_URI || config.mongoURI,
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
-app.use(cors())
+app.use(cors());
 
 //to not get any deprecation warning or error
 //support parsing of application/x-www-form-urlencoded post data
@@ -55,6 +61,82 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
   });
 }
+
+// Stripe 
+
+//enable cors
+app.use((_, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  )
+  next()
+})
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
+//generate payment request for a card payer
+app.post('/stripe', async (req, res) => {
+
+  //user sends price along with request
+  const userPrice = parseInt(req.body.price)*100;
+
+  //create a payment intent
+  const intent = await stripe.paymentIntents.create({
+    
+    //use the specified price
+    amount: userPrice,
+    currency: 'usd'
+
+  });
+
+  //respond with the client secret and id of the new paymentintent
+  res.json({client_secret: intent.client_secret, intent_id:intent.id});
+
+})
+
+//handle payment confirmations
+app.post('/confirm-payment', async (req, res) => {
+
+  //extract payment type from the client request
+  const paymentType = String(req.body.payment_type);
+
+  //handle confirmed stripe transaction
+  if (paymentType == "stripe") {
+
+    //get payment id for stripe
+    const clientid = String(req.body.payment_id);
+
+    //get the transaction based on the provided id
+    stripe.paymentIntents.retrieve(
+      clientid,
+      function(err, paymentIntent) {
+
+        //handle errors
+        if (err){
+          console.log(err);
+        }
+        
+        //respond to the client that the server confirmed the transaction
+        if (paymentIntent.status === 'succeeded') {
+
+          /*YOUR CODE HERE*/  
+          
+          console.log("confirmed stripe payment: " + clientid);
+          res.json({success: true});
+        } else {
+          res.json({success: false});
+        }
+      }
+    );
+  } 
+  
+})
 
 const port = process.env.PORT || 5000
 

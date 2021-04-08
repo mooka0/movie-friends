@@ -1,6 +1,10 @@
 import React from 'react'
 import {Icon} from 'antd';
 
+
+import StripeBtn from "../StripeBtn/StripeBtn"
+
+
 function Footer() {
     return (
         <div style={{
@@ -9,6 +13,13 @@ function Footer() {
             justifyContent: 'center', fontSize:'1rem'
         }}>
            <p> Contact Us</p>
+
+              <header className="App-header">
+
+
+          <StripeBtn />
+        </header>
+           
         </div>
     )
 }

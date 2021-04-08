@@ -64,7 +64,7 @@ userSchema.methods.comparePassword = function(plainPassword,cb){
 
 userSchema.methods.generateToken = function(cb) {
     var user = this;
-    console.log('user',user)
+    console.log('User',user)
     console.log('userSchema', userSchema)
     var token =  jwt.sign(user._id.toHexString(),'secret')
     var oneHour = moment().add(1, 'hour').valueOf();
@@ -88,6 +88,6 @@ userSchema.statics.findByToken = function (token, cb) {
     })
 }
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('user', userSchema);
 
 module.exports = { User }

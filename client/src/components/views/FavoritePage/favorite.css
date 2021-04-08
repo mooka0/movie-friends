@@ -1,7 +1,8 @@
 table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 100%
+    width: 100%;
+    color: black;
 }
 
 td,
@@ -13,5 +14,13 @@ th {
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #8eb1c7ff;
+}
+
+tr:nth-child(odd) {
+    background-color: #8eb1c7ff;
+}
+
+body {
+    background: #c1bfb5ff;
 }

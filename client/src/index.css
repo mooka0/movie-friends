@@ -4,6 +4,7 @@ body {
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
@@ -16,7 +17,7 @@ body {
   font-size: 14px;
   line-height: 1.5;
   color: #24292e;
-  background-color: #FEFDFF;
+  background-color: black;
 }
 
 .app {
@@ -36,25 +37,4 @@ input.error {
   color: #B02E0C;
   height: 5px;
   margin-top: -12px;
-}
-.StripeElement {
-  height: 40px;
-  padding: 10px 12px;
-  width: 100%;
-  color: #32325d;
-  background-color: white;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
-}
-.StripeElement--focus {
-  box-shadow: 0 1px 3px 0 #cfd7df;
-}
-.StripeElement--invalid {
-  border-color: #fa755a;
-}
-.StripeElement--webkit-autofill {
-  background-color: #fefde5 !important;
 }

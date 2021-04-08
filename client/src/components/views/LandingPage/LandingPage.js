@@ -4,7 +4,6 @@ import { Typography, Row } from 'antd';
 import MainImage from './Sections/MainImage';
 import GridCard from './Sections/GridCard';
 
-
 const { Title } = Typography;
 
 function LandingPage() {

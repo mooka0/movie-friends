@@ -9,8 +9,6 @@ import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer"
 import FavoritePage from "./views/FavoritePage/FavoritePage"
 import MovieDetailPage from './views/MovieDetailPage/MovieDetailPage'
-import CheckoutWithStripe from './CheckoutWithStripe'
-
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -27,7 +25,6 @@ function App() {
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/movie/:movieId" component={Auth(MovieDetailPage, null)} />
           <Route exact path="/favorite" component={Auth(FavoritePage, null)} />
-          <Route exact path="/stripe" component={CheckoutWithStripe} />
         </Switch>
       </div>
       <Footer />

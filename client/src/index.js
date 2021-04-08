@@ -14,24 +14,21 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import promiseMiddleware from 'redux-promise';
 import ReduxThunk from 'redux-thunk';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 
+const CheckoutForm = () => {
+    const stripe = useStripe();
 
-import {Elements} from '@stripe/react-stripe-js';
-import {loadStripe} from '@stripe/stripe-js';
+    return <form> <CardElement /><button type="submit" disabled={stripe}>Donate</button></form>;
+};
 
-import CheckoutForm from './checkoutForm';
 
 const stripePromise = loadStripe('pk_test_51IdhWuJMvTOS5UtZHZQWBAS2wyLIkOBx69d3x3j9cYcVgOwXTrpwZv9ScTxEz37Y48hY0yIhvunfiyTOGFUxwh7v00VK4RjFEt');
 
-// function App() {
-//   return (
-//     <Elements stripe={stripePromise}>
-//       <CheckoutForm />
-//     </Elements>
-//   );
-// };
-
-ReactDOM.render(<App />, document.getElementById('root'));
+const Index = () => {
+    return <Elements stripe={stripePromise}><CheckoutForm /></Elements>
+};
 
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware, ReduxThunk)(createStore);
 
@@ -52,3 +49,5 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+export default Index;

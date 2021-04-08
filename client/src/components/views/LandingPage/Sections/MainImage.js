@@ -29,7 +29,7 @@ function MainImage(props) {
                     }
                 }>
                     <Title style={
-                            { color: 'white'}
+                            {color: 'white'}
                         }
                         level={2}>
                         {props.title}

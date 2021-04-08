@@ -19,17 +19,29 @@
   "dependencies": {
     "@stripe/react-stripe-js": "^1.4.0",
     "@stripe/stripe-js": "^1.13.2",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "github:testing-library/user-event",
     "axios": "^0.21.1",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
+    "bootstrap": "^4.6.0",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
     "mongoose": "^5.4.20",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.5.2",
+    "react-dom": "^17.0.2",
+    "react-paypal-button-v2": "^2.6.3",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
+    "react-smart-payment-buttons": "^0.2.3",
+    "react-stripe-checkout": "^2.6.3",
     "saslprep": "^1.0.3",
     "stripe": "^8.142.0",
     "supports-color": "^7.1.0"
@@ -37,5 +49,7 @@
   "devDependencies": {
     "concurrently": "^4.1.0",
     "nodemon": "^1.19.1"
-  }
+  },
+  "repository": "https://github.com/mooka0/project-3.git",
+  "author": "mooka0 <angelankao@gmail.com>"
 }

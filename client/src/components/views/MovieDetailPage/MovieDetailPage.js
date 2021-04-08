@@ -5,7 +5,6 @@ import { Descriptions, Button, Row } from 'antd'
 import GridCard from '../LandingPage/Sections/GridCard'
 import Favorite from '../MovieDetailPage/Sections/Favorite'
 import '../MovieDetailPage/MovieDetailPage.css'
-import { color } from 'ansi-styles'
 
 
 // movie page detail
@@ -55,7 +54,7 @@ function MovieDetailPage(props) {
             </div>
 
         {/* Movie Info Table*/}
-        <Descriptions title="Movie Info" bordered>
+        <Descriptions title="Movie Info" >
             <Descriptions.Item label="Title">{Movie.original_title}</Descriptions.Item>
             <Descriptions.Item label="Release Date">{Movie.release_date}</Descriptions.Item>
             {/* <Descriptions.Item label="revenue">{Movie.revenue}e</Descriptions.Item> */}
@@ -68,8 +67,8 @@ function MovieDetailPage(props) {
         </Descriptions>
 
     
-            <div style={{ display: 'flex', justifyContent: 'center', }}>
-                <Button class='toggle' onClick={handleClick}> Toggle Actor View</Button>
+            <div style={{ display: 'flex', justifyContent: 'center'}}>
+                <Button onClick={handleClick}> Toggle Actor View</Button>
             </div>
         
         {/* Gridcard for crews */}

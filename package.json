@@ -28,7 +28,8 @@
     "mongoose": "^5.4.20",
     "react-redux": "^5.0.7",
     "saslprep": "^1.0.3",
-    "supports-color": "^7.1.0"
+    "supports-color": "^7.1.0",
+    "yarn": "^1.22.10"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"

@@ -46,4 +46,3 @@ export function logoutUser(){
         payload: request
     }
 }
-

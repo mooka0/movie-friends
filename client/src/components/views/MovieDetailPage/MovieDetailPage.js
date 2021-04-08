@@ -4,9 +4,12 @@ import MainImage from '../LandingPage/Sections/MainImage'
 import { Descriptions, Button, Row } from 'antd'
 import GridCard from '../LandingPage/Sections/GridCard'
 import Favorite from '../MovieDetailPage/Sections/Favorite'
+<<<<<<< HEAD
 import '../MovieDetailPage/MovieDetailPage.css'
 
 
+=======
+>>>>>>> 092047d83bc8bb0695bc3f1927dacb57245be155
 // movie page detail
 function MovieDetailPage(props) {
     const movieId = props.match.params.movieId

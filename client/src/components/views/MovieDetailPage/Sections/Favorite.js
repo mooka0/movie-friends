@@ -27,7 +27,11 @@ function Favorite(props) {
                 setFavoriteNumber(response.data.favoriteNumber)
 
             } else { 
+<<<<<<< HEAD
                 // alert('Failed to get favoriteNumber')
+=======
+                alert('Failed to get favoriteNumber')
+>>>>>>> 092047d83bc8bb0695bc3f1927dacb57245be155
             }
         })
 

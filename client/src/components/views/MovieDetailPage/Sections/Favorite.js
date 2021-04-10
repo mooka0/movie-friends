@@ -1,6 +1,4 @@
 import axios from 'axios'
-// import { set } from 'mongoose'
-// import { addListener } from 'nodemon'
 import React, { useEffect, useState } from 'react'
 
 function Favorite(props) {
@@ -25,10 +23,7 @@ function Favorite(props) {
         .then(response => {
             if(response.data.succes) {
                 setFavoriteNumber(response.data.favoriteNumber)
-
-            } else { 
-                // alert('Failed to get favoriteNumber')
-            }
+            } 
         })
 
         axios.post('/api/favorite/favorited', variable)
@@ -40,7 +35,6 @@ function Favorite(props) {
             }
         })
 
-        
     }, [])
 
 

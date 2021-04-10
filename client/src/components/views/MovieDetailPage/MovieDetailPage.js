@@ -57,13 +57,7 @@ function MovieDetailPage(props) {
         <Descriptions title="Movie Info" >
             <Descriptions.Item label="Title">{Movie.original_title}</Descriptions.Item>
             <Descriptions.Item label="Release Date">{Movie.release_date}</Descriptions.Item>
-            {/* <Descriptions.Item label="revenue">{Movie.revenue}e</Descriptions.Item> */}
             <Descriptions.Item label="Runtime">{Movie.runtime} minutes</Descriptions.Item>
-            {/* <Descriptions.Item label="Vote" span={2}>
-                {Movie.vote_average}</Descriptions.Item> */}
-            {/* <Descriptions.Item label="Votes">{Movie.vote_count}</Descriptions.Item>
-            <Descriptions.Item label="Status">{Movie.status}</Descriptions.Item>
-            <Descriptions.Item label="Popularity">{Movie.popularity}</Descriptions.Item> */}
         </Descriptions>
 
     
@@ -87,9 +81,6 @@ function MovieDetailPage(props) {
             ))}  
             </Row>
             }
-
-            
-
 
         </div>
         </div>

@@ -1,7 +1,4 @@
 import React from 'react'
-// import {Icon} from 'antd';
-
-
 import StripeBtn from "../StripeBtn/StripeBtn"
 
 
@@ -12,14 +9,9 @@ function Footer() {
             flexDirection: 'column', alignItems: 'center',
             justifyContent: 'center', fontSize:'1rem'
         }}>
-           <p> Contact Us</p>
-
-              <header className="App-header">
-
+           <p> Contact Us </p>
 
           <StripeBtn />
-        </header>
-           
         </div>
     )
 }

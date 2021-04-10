@@ -14,11 +14,7 @@ const dotenv = require("dotenv");
 configureRoutes(app);
 dotenv.config()
 
-// const mongoose = require("mongoose");
-// mongoose
-//   .connect(config.mongoURI, { useNewUrlParser: true })
-//   .then(() => console.log("DB connected"))
-//   .catch(err => console.error(err));
+
 
 const mongoose = require("mongoose");
 const connect = mongoose.connect(process.env.MONGODB_URI || config.mongoURI,
@@ -125,7 +121,7 @@ app.post('/confirm-payment', async (req, res) => {
         //respond to the client that the server confirmed the transaction
         if (paymentIntent.status === 'succeeded') {
 
-          /*YOUR CODE HERE*/  
+        
           
           console.log("confirmed stripe payment: " + clientid);
           res.json({success: true});

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col } from 'antd';
 
-
+// movie poster main page
 function GridCard(props) {
 
     if(props.actor) {

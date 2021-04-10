@@ -86,7 +86,7 @@ function LoginPage(props) {
                 <Input
                   id="email"
                   prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                  placeholder="Enter email"
+                  placeholder="Enter your email"
                   type="email"
                   value={values.email}
                   onChange={handleChange}

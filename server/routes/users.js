@@ -9,6 +9,7 @@ const { auth } = require("../middleware/auth");
 //=================================
 
 router.get("/auth", auth, (req, res) => {
+    Item.find()
     res.status(200).json({
         _id: req.user._id,
         isAdmin: req.user.role === 0 ? false : true,
@@ -20,10 +21,10 @@ router.get("/auth", auth, (req, res) => {
         image: req.user.image,
     });
 });
-
+//@route Post 
 router.post("/register", (req, res) => {
 
-    const user = new User(req.body);
+    const user = new User({name:req.body.name});
 
     user.save((err, doc) => {
         if (err) return res.json({ success: false, err });

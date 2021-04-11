@@ -11,7 +11,7 @@ const configureRoutes = require("./routes")
 const stripe = require('stripe')('sk_test_51Idm5GFYHKs1KtshFqdmgmrnml45E7LbUugqXReu4jGpi61GkPnOMSGbwor9A5JeLgiO07gsaAr0XtXYvn80Pusn00NaxiY8M8');
 
 const dotenv = require("dotenv");
-configureRoutes(app);
+// configureRoutes(app);
 dotenv.config()
 
 
